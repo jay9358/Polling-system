@@ -179,7 +179,7 @@ const TeacherPage = () => {
                 </div>
 
                 {/* Bottom Right Action Button */}
-                <div className="fixed bottom-8 right-24 z-40">
+                <div className="fixed  left-[65%] top-[60%] padding-top-10 padding-bottom-10 z-40">
                     <button
                         onClick={handleNewQuestion}
                         className="bg-[#635BFF] px-8 py-3 rounded-full text-base font-medium text-white transition-all duration-300 shadow-lg hover:shadow-[#635BFF]/30 transform hover:-translate-y-0.5 flex items-center gap-2"
