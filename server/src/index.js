@@ -23,9 +23,24 @@ const io = new Server(httpServer, {
 });
 
 // Middleware
-
+app.use(cors({
+    origin: [
+        process.env.CLIENT_URL,
+        "http://localhost:5173",
+        "https://polling-system-kappa-smoky.vercel.app"
+    ],
+    credentials: true
+}));
 app.use(express.json());
 app.use(cookieParser());
+
+// Request logging middleware
+app.use((req, res, next) => {
+    console.log(`${req.method} ${req.url}`);
+    console.log('Origin:', req.headers.origin);
+    console.log('Body:', req.body);
+    next();
+});
 
 // Routes
 app.use('/api/auth', authRoutes);
